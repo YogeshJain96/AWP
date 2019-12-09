@@ -1,142 +1,145 @@
 <!DOCTYPE html>
+
 <html>
-  <head>
+
+<head>
     <script>
-      var displayList = [""];
-      var content = "";
-      var operator = "";
-      var n1, n2;
-      var opList = new Array("+", "-", "*", "/", "%");
-      function pressed(n) {
-        switch (n) {
-          case 1:
-          case 2:
-          case 3:
-          case 4:
-          case 5:
-          case 6:
-          case 7:
-          case 8:
-          case 9:
-          case 0:
-          case ".":
-            content = content + n;
-            break;
-          case "c":
-            content = "";
-            break;
-          case "b":
-            content = content.substr(0, content.length - 1);
-            break;
-          case "+":
-            var lc = content.charAt(length - 1);
-            if (lc == "+" || lc == "-") {
-              console.log("inside +b" + content.charAt(length - 1));
-              content = content.substr(0, content.length - 1);
-              operator = "+";
-              n1 = Number(content);
-            } else {
-              operator = "+";
-              n1 = Number(content);
-              content = "";
-            }
-            break;
-          case "-":
-            var lc = content.charAt(length - 1);
-            if (lc == "+" || lc == "-") {
-              console.log("inside +b" + content.charAt(length - 1));
-              content = content.substr(0, content.length - 1);
-              operator = "-";
-              n1 = Number(content);
-            } else {
-              operator = "-";
-              n1 = Number(content);
-              content = "";
-            }
-            break;
-          case "*":
-            operator = "*";
-            n1 = Number(content);
-            content = "";
-            break;
-          case "/":
-            operator = "/";
-            n1 = Number(content);
-            content = "";
-            break;
-          case "%":
-            operator = "%";
-            n1 = Number(content);
-            content = "";
-            break;
-          case "=":
-            {
-              n2 = Number(content);
-              var result = 0;
-              switch (operator) {
+        var displayList = [""];
+        var content = "";
+        var operator = "";
+        var n1, n2;
+        var opList = new Array("+", "-", "*", "/", "%");
+        function pressed(n) {
+            switch (n) {
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                case 0:
+                case ".":
+                    content = content + n;
+                    break;
+                case "c":
+                    operator = "";
+                    content = "";
+                    break;
+                case "b":
+                    content = content.substr(0, content.length - 1);
+                    break;
                 case "+":
-                  result = n1 + n2;
-                  break;
+                    if (operator == "") {
+                        n1 = Number(content);
+                        content = "";
+                    }
+                    operator = "+";
+                    break;
                 case "-":
-                  result = n1 - n2;
-                  break;
+                    if (operator == "") {
+                        n1 = Number(content);
+                        content = "";
+                    }
+                    operator = "-";
+                    break;
                 case "*":
-                  result = n1 * n2;
-                  break;
+                    if (operator == "") {
+                        n1 = Number(content);
+                        content = "";
+                    }
+                    operator = "*";
+                    break;
                 case "/":
-                  result = n1 / n2;
-                  break;
+                    if (operator == "") {
+                        n1 = Number(content);
+                        content = "";
+                    }
+                    operator = "/";
+                    break;
                 case "%":
-                  result = n1 % n2;
-                  break;
-              }
-              content = n1 + operator + n2 + "=" + result;
+                    if (operator == "") {
+                        n1 = Number(content);
+                        content = "";
+                    }
+                    operator = "%";
+                    break;
+                case "=":
+                    {
+                        n2 = Number(content);
+                        var result = 0;
+                        switch (operator) {
+                            case "+":
+                                result = n1 + n2;
+                                break;
+                            case "-":
+                                result = n1 - n2;
+                                break;
+                            case "*":
+                                result = n1 * n2;
+                                break;
+                            case "/":
+                                result = n1 / n2;
+                                break;
+                            case "%":
+                                result = n1 % n2;
+                                break;
+                        }
+                        content = n1 + operator + n2 + "=" + result;
+                        operator = "";
+                    }
+                    break;
+                default:
+                    break;
             }
-            break;
-          default:
-            break;
+            if (content.length == 0)
+                document.getElementById("calcDisplay").innerHTML = "0";
+            else document.getElementById("calcDisplay").innerHTML = content;
         }
-        if (content.length == 0)
-          document.getElementById("calcDisplay").innerHTML = "0";
-        else document.getElementById("calcDisplay").innerHTML = content;
-      }
     </script>
-  </head>
-  <body>
-    <h1>MIUI Calculator</h1>
+</head>
+
+<body>
+    <h5>MIUI Calculator</h5>
     <table border="1">
-      <tr>
-        <td colspan="4" align="right"><div id="calcDisplay">0</div></td>
-      </tr>
-      <tr>
-        <td><button onclick="pressed('c');">C</button></td>
-        <td><button onclick="pressed('b');">b</button></td>
-        <td><button onclick="pressed('/');">/</button></td>
-        <td><button onclick="pressed('*');">*</button></td>
-      </tr>
-      <tr>
-        <td><button onclick="pressed(7);">7</button></td>
-        <td><button onclick="pressed(8);">8</button></td>
-        <td><button onclick="pressed(9);">9</button></td>
-        <td><button onclick="pressed('-');">-</button></td>
-      </tr>
-      <tr>
-        <td><button onclick="pressed(4);">4</button></td>
-        <td><button onclick="pressed(5);">5</button></td>
-        <td><button onclick="pressed(6);">6</button></td>
-        <td><button onclick="pressed('+');">+</button></td>
-      </tr>
-      <tr>
-        <td><button onclick="pressed(1);">1</button></td>
-        <td><button onclick="pressed(2);">2</button></td>
-        <td><button onclick="pressed(3);">3</button></td>
-        <td rowspan="2"><button onclick="pressed('=');">=</button></td>
-      </tr>
-      <tr>
-        <td><button onclick="pressed('%');">%</button></td>
-        <td><button onclick="pressed(0);">0</button></td>
-        <td><button onclick="pressed('.');">.</button></td>
-      </tr>
+        <tr>
+            <td colspan="4" align="right">
+                <div id="calcDisplay">0</div>
+            </td>
+        </tr>
+        <tr>
+            <td><button onclick="pressed('c');">C</button></td>
+            <td><button onclick="pressed('b');">b</button></td>
+            <td><button onclick="pressed('/');">/</button></td>
+            <td><button onclick="pressed('*');">*</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="pressed(7);">7</button></td>
+            <td><button onclick="pressed(8);">8</button></td>
+            <td><button onclick="pressed(9);">9</button></td>
+            <td><button onclick="pressed('-');">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="pressed(4);">4</button></td>
+            <td><button onclick="pressed(5);">5</button></td>
+            <td><button onclick="pressed(6);">6</button></td>
+            <td><button onclick="pressed('+');">+</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="pressed(1);">1</button></td>
+            <td><button onclick="pressed(2);">2</button></td>
+            <td><button onclick="pressed(3);">3</button></td>
+            <td rowspan="2"><button onclick="pressed('=');">=</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="pressed('%');">%</button></td>
+            <td><button onclick="pressed(0);">0</button></td>
+            <td><button onclick="pressed('.');">.</button></td>
+        </tr>
     </table>
-  </body>
+</body>
+
 </html>
+<!--by Ontrooo-->
