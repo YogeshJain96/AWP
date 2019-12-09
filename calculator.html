@@ -7,7 +7,7 @@
         var displayList = [""];
         var content = "";
         var operator = "";
-        var n1, n2;
+        var n1 = 0, n2 = 0;
         var opList = new Array("+", "-", "*", "/", "%");
         function pressed(n) {
             switch (n) {
@@ -27,6 +27,7 @@
                 case "c":
                     operator = "";
                     content = "";
+                    n1 = 0, n2 = 0;
                     break;
                 case "b":
                     content = content.substr(0, content.length - 1);
@@ -68,6 +69,10 @@
                     break;
                 case "=":
                     {
+                        if (n1 == 0 && n2 == 0) {
+                            pressed('c')
+                            break;
+                        }
                         n2 = Number(content);
                         var result = 0;
                         switch (operator) {
@@ -89,6 +94,8 @@
                         }
                         content = n1 + operator + n2 + "=" + result;
                         operator = "";
+                        n1 = 0, n2 = 0;
+
                     }
                     break;
                 default:
@@ -96,7 +103,7 @@
             }
             if (content.length == 0)
                 document.getElementById("calcDisplay").innerHTML = "0";
-            else document.getElementById("calcDisplay").innerHTML = content;
+            else document.getElementById("calcDisplay").innerHTML = operator + content;
         }
     </script>
 </head>
@@ -131,7 +138,7 @@
             <td><button onclick="pressed(1);">1</button></td>
             <td><button onclick="pressed(2);">2</button></td>
             <td><button onclick="pressed(3);">3</button></td>
-            <td rowspan="2"><button onclick="pressed('=');">=</button></td>
+            <td rowspan="2"><button style="height: 100%; width: 100%;" onclick="pressed('=');">=</button></td>
         </tr>
         <tr>
             <td><button onclick="pressed('%');">%</button></td>
