@@ -6,6 +6,7 @@
       var content = "";
       var operator = "";
       var n1, n2;
+      var opList = new Array("+", "-", "*", "/", "%");
       function pressed(n) {
         switch (n) {
           case 1:
@@ -28,14 +29,30 @@
             content = content.substr(0, content.length - 1);
             break;
           case "+":
-            operator = "+";
-            n1 = Number(content);
-            content = "";
+            var lc = content.charAt(length - 1);
+            if (lc == "+" || lc == "-") {
+              console.log("inside +b" + content.charAt(length - 1));
+              content = content.substr(0, content.length - 1);
+              operator = "+";
+              n1 = Number(content);
+            } else {
+              operator = "+";
+              n1 = Number(content);
+              content = "";
+            }
             break;
           case "-":
-            operator = "-";
-            n1 = Number(content);
-            content = "";
+            var lc = content.charAt(length - 1);
+            if (lc == "+" || lc == "-") {
+              console.log("inside +b" + content.charAt(length - 1));
+              content = content.substr(0, content.length - 1);
+              operator = "-";
+              n1 = Number(content);
+            } else {
+              operator = "-";
+              n1 = Number(content);
+              content = "";
+            }
             break;
           case "*":
             operator = "*";
