@@ -1,0 +1,40 @@
+<html>
+ <head>
+    <script>
+        var nameArray = ["Pankaj", "Akash", "Vishal"];
+        function addToList()
+        {
+            var nameInputField = document.getElementById("studentName");
+            var name = nameInputField.value;
+            nameArray.push(name);
+
+            var contents = "<ul>";
+            var i=0;
+            for(i=0;i<nameArray.length;i++)
+            {
+             contents = contents + "<li>"+nameArray[i]+"</li>";
+            }
+            contents = contents + "</ul>";
+
+            var divList = document.getElementById("divNameList");
+            divList.innerHTML = contents;
+        }
+
+    </script>
+ </head>
+<body>
+       Student name: <input id="studentName" type="text" /> <br>
+       <button onclick="addToList();" >Add to List</button> <br>
+
+       <div id="divNameList">
+        <ul>
+            <li> Pankaj</li>
+            <li> Akash</li>
+            <li> Vishal</li>
+        </ul>
+
+       </div>
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script>
+           
+           var student1 = {
+               prn:101,
+               name:"Pritam",
+               percent:35.5,
+               getGrade: function (){
+                   if(this.percent>33 && this.percent<50)
+                    return "D" ;
+                    else if(this.percent>=50 && this.percent<70)
+                    return "C" ;
+                    else if(this.percent>=70 )
+                    return "A" ;
+               }
+           };
+          
+           function myFunction()
+           {
+               var msg = student1.name + " - Grade: " +student1.getGrade();
+               alert(msg);
+           }
+
+
+        </script>
+    </head>
+    <body>
+        <button onclick="myFunction();"> Find getGrade</button>
+
+    </body>
+</html>

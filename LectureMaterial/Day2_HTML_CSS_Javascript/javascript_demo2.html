@@ -1,0 +1,24 @@
+<htm>
+    <head>
+        <script>
+            function checkVoter()
+            {
+                var inputField = document.getElementById("inputAge");
+                var age = inputField.value;
+                if( age >= 18)
+                {
+                    alert("YES");
+                }else{
+                    alert("NO");
+                }
+            } 
+        </script>
+    </head>
+    <body>
+
+       <input id="inputAge" type="text" 
+                placeholder="Enter your age" /> <br>
+       <button onclick="checkVoter();" >is Voter?</button>
+    
+    </body>
+</htm>

@@ -1,0 +1,32 @@
+<html>
+<body>
+
+    <p>Register yourself</p>
+    <form action="http://redbus.in/registerMe" 
+            method="POST">
+        Enter your name<input type="text" /> <br>
+        Gender : <input type="radio" value="F" name="g">Female
+                 <input type="radio" value="M" name="g">Male         
+         <br>
+         Married? : <input type="checkbox" > <br>
+         City : <select >
+                    <option>Pune</option>
+                    <option>Shegaon</option>
+                    <option selected>Mumbai</option>
+                    <option>Shirdi</option>
+                    <option>Matheran</option>
+                    <option>Nasik</option>
+                </select> <br>
+        Date of birth : <input type="date" ><br>
+        <br>
+        <datalist id="browsers">
+            <option>Chrome</option>
+            <option>IE</option>
+            <option>Firefox</option>
+        </datalist>
+        Broswers <input list="browsers" >
+        <button type="submit" value="Submit">Submit</button><br>
+
+    </form>
+</body>
+</html>
