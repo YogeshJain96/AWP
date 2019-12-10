@@ -1,12 +1,52 @@
 [
   {
-    "name": "aaa",
-    "price": "32",
-    "category": "saads"
+    "name": "Apple",
+    "price": "24",
+    "category": "Health"
   },
   {
-    "name": "aaa",
-    "price": "32",
-    "category": "saads"
+    "name": "Map",
+    "price": "99",
+    "category": "Travel"
+  },
+  {
+    "name": "Bannana",
+    "price": "12",
+    "category": "Health"
+  },
+  {
+    "name": "Noodles",
+    "price": "199",
+    "category": "FastFood"
+  },
+  {
+    "name": "Amla",
+    "price": "112",
+    "category": "Health"
+  },
+  {
+    "name": "Rice",
+    "price": "19",
+    "category": "StapleFood"
+  },
+  {
+    "name": "Dal",
+    "price": "28",
+    "category": "StapleFood"
+  },
+  {
+    "name": "Potato",
+    "price": "28",
+    "category": "EssentialFood"
+  },
+  {
+    "name": "Onion",
+    "price": "170",
+    "category": "EssentialFood"
+  },
+  {
+    "name": "Tomato",
+    "price": "17",
+    "category": "Veg"
   }
 ]
