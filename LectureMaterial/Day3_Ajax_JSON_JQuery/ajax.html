@@ -1,0 +1,49 @@
+
+<!-- https://www.cdac.in/index.aspx?id=pune -->
+<!-- https://jsonplaceholder.typicode.com/posts -->
+
+<html>
+    <head>
+        <style>
+         #output{
+             height: 200px;
+             width: 400px;
+             background-color: rgb(162, 230, 230);
+             overflow: scroll;
+         }
+        </style>
+        <script>
+            function dataAvailable()
+            {
+                //alert("data recieved state \n "+this.readyState 
+                  //  + " \n status -" + this.status);
+                  if(this.readyState==4 && this.status==200)
+                  {
+                    document.getElementById("output").innerHTML = 
+                    this.responseText;
+                  }
+            }
+
+            function downloadData()
+            {
+                var myurl = "https://jsonplaceholder.typicode.com/posts";
+                var httpReq = new XMLHttpRequest();
+                httpReq.onreadystatechange = dataAvailable;
+                httpReq.open("GET", myurl, true);
+                httpReq.send();
+
+            }
+        </script>
+
+    </head>
+    <body>
+
+        <button id="download" onclick="downloadData();">
+            Download</button> <br>
+
+        <div id="output">
+
+        </div>
+
+    </body>
+</html>

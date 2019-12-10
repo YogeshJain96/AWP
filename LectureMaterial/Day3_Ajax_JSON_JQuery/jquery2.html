@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script  src="jquery-3.4.1.min.js" ></script>
+        
+        <script>
+                $(document).ready( function ()
+                {
+                    //document.write("hello");
+                    $(":text").keydown( function () { 
+                        $(this).css("background-color","#ffff00");
+                    });
+                    $(":text").blur( function () { 
+                        $(this).css("background-color","#ffffff");
+                    });
+
+                    $("#button1").click(function(){
+                        $("#fields").fadeOut(2000 , function(){
+                            $(this).fadeIn(2000);
+                        });
+                    });
+                });
+
+        </script>
+
+    </head>
+    <body>
+        <div id="fields">
+        <input type="text" placeholder="Email " id="email" /><br>
+        <input type="text" placeholder="Password " id="pass" /><br>
+       </div>
+        <button id="button1" >Login</button>
+    </body>
+</html>

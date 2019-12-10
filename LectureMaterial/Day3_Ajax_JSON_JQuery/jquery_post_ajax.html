@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script src="jquery-3.4.1.min.js"></script>
+
+        <script>
+          $(document).ready(function(){
+              $("#button1").click( function(){
+
+                var myURL = "http://localhost:8080/BankPortal/NewAccount";
+                
+                var obj = {
+                    "customername" : $("#name").val(),
+                    "accounttype" : $("#acctype").val(),
+                    "balance" : $("#balance").val()
+                }
+              
+                // $.get(myURL, callback, xhr, datatype);
+               $.post(myURL, JSON.stringify(obj),  function(data, status){
+                    $("#output").html(JSON.stringify(data));
+               }, 'json' );
+   
+
+              });
+          });
+        </script>
+
+    </head>
+    <body>
+        <input type="text" placeholder="name"  id="name" /><br>
+        <input type="text" placeholder="account type"  id="acctype" /><br>
+        <input type="text" placeholder="balance"  id="balance" /><br>
+        
+
+        <button id="button1"> Submit</button><br>
+        <div id="output">
+
+        </div>
+    </body>
+</html>

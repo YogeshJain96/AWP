@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script src="jquery-3.4.1.min.js"></script>
+        <script>
+            
+            $(document).ready(function() {
+
+                $("#button1").click(function() {
+                    $("p").hide();
+                });
+
+                $("#button2").click(function() {
+                    $("p").show();
+                });
+
+                $("#dmc").mouseenter(function(){
+                    $(this).css("background-color", "#ffff00");
+                });
+                $("#dmc").mouseleave(function(){
+                    $(this).css("background-color", "#876767");
+                });
+
+            });
+
+
+        </script>
+    </head>
+    <body>
+        <button id="button1"> Hide </button>
+        <p id="dmc">
+            DAC 
+            </p>
+        
+        <div>
+            DMC
+        </div>
+
+        <p>
+            Cloud Computing
+        </p>
+        <button id="button2"> Show </button>
+    </body>
+</html>

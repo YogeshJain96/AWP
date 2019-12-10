@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <script>
+            function dataAvailable()
+            {
+                 if(this.readyState==4 && this.status==200)
+                 {
+                    
+                    var jsonArray = JSON.parse(this.responseText);
+                    
+                    var contents="<table border='1'>";
+                    for(i=0; i<jsonArray.length;i++)
+                    {
+                        var obj = jsonArray[i];
+                        var row = "<tr>" + "<td>" + obj.id + "</td>" 
+                            + "<td>" + obj.userId + "</td>"
+                            + "<td>" + obj.title + "</td>"
+                            + "<td>" + obj.completed + "</td>"
+                            +"</tr>";
+                        contents += row;
+
+                    }
+                    contents += "</table>";
+                    document.getElementById("output").innerHTML =
+                     contents;
+                 }   
+            }
+           function downloadJSON()
+           {
+               var jsonURL = "https://jsonplaceholder.typicode.com/todos";
+               var httpReq = new XMLHttpRequest();
+               httpReq.onreadystatechange = dataAvailable;
+               httpReq.open("GET", jsonURL, true);
+               httpReq.send();
+
+           }
+        </script>
+    </head>
+    <body>
+        <button onclick="downloadJSON()">Download</button><br>
+
+        <div id="output">
+
+        </div>
+    </body>
+</html>

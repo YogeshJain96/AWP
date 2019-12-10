@@ -1,0 +1,43 @@
+<html>
+    <head>
+    <script src="jquery-3.4.1.min.js">
+            </script>
+    
+     <script>
+        function increment()
+        {
+            //var field1 = document.getElementById("input");
+            var field1 = $("#input");
+    
+            var newValue = parseInt(field1.val()) + 1;
+            //field1.value = newValue;
+            $("#input").val(newValue);
+        }
+        function resetField()
+        {
+            //document.getElementById("input").value="0";
+            $("#input").val("0");
+        }
+        function setupJQuery()
+        {
+            $("#button1").click(increment);
+            $("#button2").click(resetField);
+            
+
+        }
+        $(document).ready(setupJQuery);
+
+
+     </script>
+
+    </head>
+    <body>
+        <input type="text" id="input" value="0"/>
+        <br>
+        <button id="button1" >Counter</button>
+        <br>
+        <button id="button2" >Reset</button>
+        <br>
+    </body>
+
+</html>

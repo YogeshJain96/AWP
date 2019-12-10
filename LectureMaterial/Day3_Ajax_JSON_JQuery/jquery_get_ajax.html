@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script src="jquery-3.4.1.min.js"></script>
+
+        <script>
+          $(document).ready(function(){
+              $("#button1").click( function(){
+
+                var myURL = "http://localhost:8080/BankPortal/ListAllCustomer";
+               // $.get(myURL, callback, xhr, datatype);
+               $.get(myURL, function(data, status){
+                    $("#output").html(JSON.stringify(data));
+               });
+   
+
+              });
+          });
+        </script>
+
+    </head>
+    <body>
+        <button id="button1"> Download</button><br>
+        <div id="output">
+
+        </div>
+    </body>
+</html>
