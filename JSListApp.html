@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <style>
+      input {
+        width: 25%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        border: 2px solid;
+        border-radius: 4px;
+      }
+      button {
+        background-color: #292929; 
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th {
+        border: 1px solid #dddddd;
+        background-color: #9e9d9d;
+        padding: 8px;
+      }
+      td {
+        border: 1px solid #dddddd;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #d8d7d7;
+      }
+    </style>
+    <script>
+      var studentArray = [];
+      function addToTable() {
+        var prn = document.getElementById("inPrn").value;
+        var name = document.getElementById("inName").value;
+        var percent = document.getElementById("inPercent").value;
+        var stuObject = {
+          prn: prn,
+          name: name,
+          percent: percent
+        };
+        studentArray.push(stuObject);
+
+        var contents =
+          "<table border='1'><tr><th>PRN</th><th>Name</th><th>Percent</th></tr>";
+        var i = 0;
+        for (i = 0; i < studentArray.length; i++) {
+          console.log(studentArray[i]);
+          contents =
+            contents +
+            "<tr><td align='center'>" +
+            studentArray[i].prn +
+            "</td><td>" +
+            studentArray[i].name +
+            "</td>" +
+            "</td><td align='center'>" +
+            studentArray[i].percent +
+            "%</td></tr>";
+        }
+        contents = contents + "</table>";
+
+        var divList = document.getElementById("divTable");
+        divList.innerHTML = contents;
+      }
+    </script>
+  </head>
+  <body>
+    <input id="inPrn" type="number" placeholder="Enter PRN" />
+    <input id="inName" type="text" placeholder="Enter Name" />
+    <input id="inPercent" type="number" placeholder="Enter Percent" />
+    <button onclick="addToTable();">Add to Table</button>
+
+    <div id="divTable"></div>
+  </body>
+</html>
