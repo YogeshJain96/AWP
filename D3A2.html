@@ -40,7 +40,7 @@ background color to alternate rows. Also attach a checkbox with each row.-->
     <script>
       function addToTable() {
         var itemsArray;
-        //Reading JSON file via Jquery
+        //Reading External JSON file via Jquery | local file cross-origin error--to resolve
         $.getJSON(
           "https://raw.githubusercontent.com/YogeshJain96/AWP/master/dataD3A2.json",
           function(data) {
@@ -48,11 +48,14 @@ background color to alternate rows. Also attach a checkbox with each row.-->
             console.log(data);
             var contents =
               "<table border='1'><tr><th>#</th><th>Item Name</th><th>Price</th><th>Category</th></tr>";
-              var i=0;
+            var i = 0;
+            var color;
             $.each(data, function(key, val) {
+              color = i % 2 ? "DodgerBlue" : "Tomato";
               contents +=
-                "<tr><td align='center'>" +
-                "color" +
+                "<tr><td align='center' style='background-color:" +
+                color +
+                ";'>" +
                 "</td><td align='center'>" +
                 data[i].name +
                 "</td><td>" +
@@ -61,7 +64,7 @@ background color to alternate rows. Also attach a checkbox with each row.-->
                 "</td><td align='center'>" +
                 data[i].category +
                 "</td></tr>";
-                i++;
+              i++;
             });
             contents += "</table>";
             $("#divTable").html(contents);
