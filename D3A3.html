@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <style>
+      button {
+        background-color: #292929;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      thead {
+        background-color: #9e9d9d;
+      }
+      tbody {
+        display: block;
+        overflow: auto;
+        max-height: 750px;
+      }
+      thead,
+      tbody tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+      }
+      td {
+        border: 1px solid #dddddd;
+        padding: 8px;
+      }
+      tr:nth-child(even) {
+        background-color: #d8d7d7;
+      }
+    </style>
+    <script src="jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script>
+      function addToTable() {
+        var itemsArray;
+        //Reading External JSON file via Jquery | local file cross-origin error--to resolve
+        $.getJSON("https://jsonplaceholder.typicode.com/posts", function(data) {
+          itemsArray = data;
+          console.log(data);
+          var contents =
+            "<table border='1'><thead><tr><td>#</td><td>ID</td><td>Title</td><td>Body</td></tr></thead><tbody>";
+          var i = 0;
+          var color;
+          $.each(data, function(key, val) {
+            color = i % 2 ? "DodgerBlue" : "Tomato";
+            contents +=
+              "<tr><td align='center' style='background-color:" +
+              color +
+              ";'>" +
+              "</td><td align='center'>" +
+              data[i].id +
+              "</td><td>" +
+              data[i].title +
+              "</td>" +
+              "</td><td align='justify'>" +
+              data[i].body +
+              "</td></tr>";
+            i++;
+          });
+          contents += "</table>";
+          $("#divTable").html(contents);
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="addToTable();">Download</button>
+
+    <div id="divTable"></div>
+  </body>
+</html>
