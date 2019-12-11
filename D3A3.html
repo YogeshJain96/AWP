@@ -1,3 +1,6 @@
+<!--Download data from from below url using XMLHttpRequest object and display on a Table.
+Keep the Table header row sticky (fixed while scrolling).
+https://jsonplaceholder.typicode.com/posts-->
 <html>
   <head>
     <style>
@@ -39,43 +42,52 @@
         background-color: #d8d7d7;
       }
     </style>
-    <script src="jquery-3.4.1.min.js" type="text/javascript"></script>
-    <script>
-      function addToTable() {
-        var itemsArray;
-        //Reading External JSON file via Jquery | local file cross-origin error--to resolve
-        $.getJSON("https://jsonplaceholder.typicode.com/posts", function(data) {
-          itemsArray = data;
-          console.log(data);
-          var contents =
-            "<table border='1'><thead><tr><td>#</td><td>ID</td><td>Title</td><td>Body</td></tr></thead><tbody>";
-          var i = 0;
-          var color;
-          $.each(data, function(key, val) {
-            color = i % 2 ? "DodgerBlue" : "Tomato";
-            contents +=
-              "<tr><td align='center' style='background-color:" +
-              color +
-              ";'>" +
-              "</td><td align='center'>" +
-              data[i].id +
-              "</td><td>" +
-              data[i].title +
-              "</td>" +
-              "</td><td align='justify'>" +
-              data[i].body +
-              "</td></tr>";
-            i++;
-          });
-          contents += "</table>";
-          $("#divTable").html(contents);
-        });
-      }
-    </script>
   </head>
   <body>
-    <button onclick="addToTable();">Download</button>
+    <div id="demo">
+      <h2>The XMLHttpRequest Object</h2>
+      <button type="button" onclick="loadDoc()">Download</button>
+    </div>
 
-    <div id="divTable"></div>
+    <div id="divOutput"></div>
+
+    <script>
+      function loadDoc() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myDiv = document.getElementById("divOutput");
+            var dataArr = JSON.parse(this.responseText);
+            console.log(dataArr);
+            myDiv.innerHTML = " total records:" + dataArr.length;
+
+            var myHTML =
+              "<table border='1'><thead><tr><td>#</td><td>ID</td><td>Title</td><td>Body</td></tr></thead><tbody>";
+            var color;
+            for (i = 0; i < dataArr.length; i++) {
+              color = i % 2 ? "DodgerBlue" : "Tomato";
+              var data = dataArr[i];
+              var myTR =
+                "<tr><td align='center' style='background-color:" +
+                color +
+                ";'>" +
+                "</td><td align='center'>" +
+                data.id +
+                "</td><td>" +
+                data.title +
+                "</td>" +
+                "</td><td align='justify'>" +
+                data.body +
+                "</td></tr>";
+              myHTML = myHTML + myTR;
+            }
+            myHTML = myHTML + "</table>";
+            myDiv.innerHTML = myHTML;
+          }
+        };
+        xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
+        xhttp.send();
+      }
+    </script>
   </body>
 </html>
