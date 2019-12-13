@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color:#a9d7d1;;
+        font-family: Calibri, "Trebuchet MS", sans-serif;
+      }
+      .main {
+        text-align: center;
+      }
+      .inputForm {
+        background-color: rgb(233, 233, 233);
+        margin: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Survey Form</h1>
+      <div class="inputForm">
+        <table style="margin-left: 80px;">
+          <tr>
+            <td colspan="2" align="right">
+              <h4>Let us know how we can improve freeCodeCamp</h4>
+            </td>
+          </tr>
+          <tr>
+            <td align="right"><sup>*</sup>Name:</td>
+            <td>
+              <input type="text" id="name" placeholder="Enter your name" required/>
+            </td>
+          </tr>
+          <tr>
+            <td align="right"><sup>*</sup>Email:</td>
+            <td>
+              <input type="text" id="email" placeholder="Enter your email" required/>
+            </td>
+          </tr>
+          <tr>
+            <td align="right"><sup>*</sup>Age:</td>
+            <td><input type="number" id="age" placeholder="Age" required /></td>
+          </tr>
+          <tr>
+            <td align="right">
+              "Which option best describes your current role?"
+            </td>
+            <td align="left">
+              <select>
+                <option value="student">Student</option>
+                <option value="developer">Developer</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td align="right">
+              "How likely is that you would recommend <br/>freeCodeCamp to a friend"
+            </td>
+            <td align="left">
+              <input type="radio" name="rec" value="definitely" />
+              Definitely<br />
+              <input type="radio" name="rec" value="maybe" /> May be<br />
+              <input type="radio" name="rec" value="notsure" /> Not sure
+            </td>
+          </tr>
+          <tr>
+            <td align="right">"What do you like most in FCC"</td>
+            <td align="left">
+              <select>
+                <option value="fp">Free Pizza</option>
+                <option value="fr">Free RedBull</option>
+                <option value="n">Networking</option>
+                <option value="fg">Free Goodies</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td align="right">
+              "Things that should be improved in the future <br/>(Check all that
+              apply): "
+            </td>
+            <td align="left">
+                <input type="checkbox" name="improvement" value="FE" />
+                Front-End-Projects<br />
+                <input type="checkbox" name="improvement" value="BE" />
+                Back-End-Projects<br />
+                <input type="checkbox" name="improvement" value="DV" />
+                Data Visualization<br /><br />
+            </td>
+          </tr>
+          <tr><td colspan="2" style="padding-left: 250px"><input type="button" value="Submit"/></td></tr>
+        </table>
+        
+        <br/>
+      </div>
+      <br />
+    </div>
+  </body>
+</html>

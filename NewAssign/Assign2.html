@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .main {
+        display: flex;
+      }
+      #index {
+        color: teal;
+        margin: 5px;
+      }
+      #content {
+        margin: 20px;
+        margin-top: 10px;
+      }
+      #heading {
+        color: teal;
+      }
+      a {
+        text-decoration: none;
+      }
+    </style>
+    <script>
+      function showContent(n) {
+        console.log(n);
+        switch (n) {
+          case 1:
+            document.getElementById("content").innerHTML =
+              "<h2>Introduction</h2><p>Javascript is fun. Keywords JavaScript statements often start with a keyword to identify the JavaScript action to be performed.</p>";
+            break;
+          case 2:
+            document.getElementById("content").innerHTML =
+              "<h2>What you should already know</h2><p>Javascript is fun. Keywords JavaScript statements often start with a keyword to identify the JavaScript action to be performed.</p>";
+            break;
+          case 3:
+            document.getElementById("content").innerHTML =
+              "<h2>Javascript and Java</h2><p>Javascript is fun. Keywords JavaScript statements often start with a keyword to identify the JavaScript action to be performed.</p>";
+            break;
+          case 4:
+            document.getElementById("content").innerHTML =
+              "<h2>Hello World</h2><p>Javascript is fun. Keywords JavaScript statements often start with a keyword to identify the JavaScript action to be performed.</p>";
+            break;
+          case 5:
+            document.getElementById("content").innerHTML =
+              "<h2>Variables</h2><p>Javascript is fun. Keywords JavaScript statements often start with a keyword to identify the JavaScript action to be performed.</p>";
+            break;
+          case 6:
+            document.getElementById("content").innerHTML =
+              "<h2>Declaring Variable</h2><p>Javascript is fun. Keywords JavaScript statements often start with a keyword to identify the JavaScript action to be performed.</p>";
+            break;
+          case 7:
+            document.getElementById("content").innerHTML =
+              "<h2>Variable Scope</h2><p>Javascript is fun. Keywords JavaScript statements often start with a keyword to identify the JavaScript action to be performed.</p>";
+            break;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <hr />
+    <div class="main">
+      <div id="index">
+        <h2>JS Documentation</h2>
+        <p><a href="#" onclick="showContent(1)">Introduction</a></p>
+        <hr />
+        <p>
+          <a href="#" onclick="showContent(2)">What you should already know</a>
+        </p>
+        <hr />
+        <p><a href="#" onclick="showContent(3)">Javascript and Java</a></p>
+        <hr />
+        <p><a href="#" onclick="showContent(4)">Hello World</a></p>
+        <hr />
+        <p><a href="#" onclick="showContent(5)">Variables</a></p>
+        <hr />
+        <p><a href="#" onclick="showContent(6)">Declaring Variable</a></p>
+        <hr />
+        <p><a href="#" onclick="showContent(7)">Variable Scope</a></p>
+        <hr />
+      </div>
+      <hr />
+      <div id="content">
+        <h2>Introduction</h2>
+        <p>
+          Javascript is fun. JavaScript Keywords JavaScript statements often
+          start with a keyword to identify the JavaScript action to be
+          performed.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
