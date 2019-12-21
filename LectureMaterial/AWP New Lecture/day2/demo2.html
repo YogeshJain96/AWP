@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demo 2</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body{
+            margin: 0;
+        }
+        div {
+            background-color: rgb(144, 161, 161) !important;
+        }
+
+        div.secondElementInFile{
+            font-size: 30px;
+        }
+
+        div.secondElementInFile p#secondPara span{
+
+        }
+
+
+
+        p{
+            color: red;
+        }
+
+        p#firstPara{
+            color: blue;
+        }
+        p#secondPara{
+            color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <div class="firstElementInFile" id="firstEle">
+            <h1 id="firstPara">Some heading</h1>
+            <h2>Some heading</h2>
+            <h3>Some heading</h3>
+            <h4>Some heading</h4>
+            <h5>Some heading</h5>
+            <h6>Some heading</h6>
+            <p id="firstPara">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam aut
+                quibusdam vero. Quasi corporis fugit excepturi, doloribus incidunt dolorum 
+                ab odio repellat consectetur tempora facilis rem, nulla tempore harum voluptatibus?
+            </p>
+    </div>
+    <div class="secondElementInFile" id="secondEle">
+            <p style="font-size: 30px;">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam aut
+                    quibusdam vero. Quasi corporis fugit excepturi, doloribus incidunt dolorum 
+                    ab odio repellat consectetur tempora facilis rem, nulla tempore harum voluptatibus?
+                </p>
+            <p id="secondPara">
+                Lorem ipsum dolor <span id="firstS">sit</span> amet consectetur adipisicing elit. Aperiam aut
+                quibusdam vero. Quasi corporis fugit <span>jhjuj</span>excepturi, doloribus incidunt dolorum 
+                ab odio repellat consectetur tempora facilis rem, nulla tempore harum voluptatibus?
+            </p>
+    </div>
+    
+</body>
+</html>

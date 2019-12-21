@@ -1,0 +1,28 @@
+body{
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+div#someThings{
+    height: 180vh;
+    background-color: cyan;
+    padding-top:30px ;
+
+}
+div#someThings div{
+    background-color: crimson;
+    height: 40vh;
+    position: relative;
+    margin-top:50px;
+}
+p{
+    margin: 0;
+    top: 30px;
+    position: absolute;
+     top: 50px;
+    /* width: 432px;*/
+}
+
+h1{
+    position: fixed;
+    bottom:2vh;
+}

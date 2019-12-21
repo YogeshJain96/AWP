@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employees>
+  <employee empid="1234">
+    <name>Alex</name>
+    <address>
+        <houseNo>21</houseNo>
+        <street>High street</street>
+        <locality>King's circle</locality>
+    </address>
+    
+  </employee>
+  <employee empid="1234">
+    <name>John</name>
+    <address>
+        <houseNo>22</houseNo>
+        <street>High street</street>
+        <locality>King's circle</locality>
+    </address>
+    <empid>1234</empid>
+  </employee>
+  <employee empid="1234">
+    <name>Alexandar</name>
+    <address>
+        <houseNo></houseNo>
+        <street>High street</street>
+        <locality>King's circle</locality>
+    </address>
+    <empid>1234</empid>
+  </employee>
+</employees>

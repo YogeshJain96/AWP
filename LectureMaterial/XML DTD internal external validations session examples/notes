@@ -1,0 +1,37 @@
+PCDATA – parsed character data. It parse to all the data in an xml document.
+
+Example:
+
+<family>
+    <mother>mom</mother>
+    <father>dad</father>
+</family>
+Here, the family element contains 2 more elements “mother” and ”father”. So it parse further to get the text of mother and father to give the value of family as “mom dad”
+
+CDATA – unparsed characted Data. This is the data that should not be parsed further in an xml document.
+
+<family>
+    <![CDATA[ 
+       <mother>mom</mother>
+       <father>dad</father>
+    ]]>
+</family>
+Here, the value of family will be <mother>mom</mother><father>dad</father>.
+
+
+From WIKI:
+
+PCDATA
+
+Simply speaking, PCDATA stands for Parsed Character Data. 
+That means the characters are to be parsed by the XML, XHTML, or HTML parser. 
+(&lt; will be changed to <, <p> will be taken to mean a paragraph tag, etc). 
+Compare that with CDATA, where the characters are not to be parsed by the XML, XHTML, 
+or HTML parser.
+
+CDATA
+
+The term CDATA, meaning character data, is used for distinct, but related purposes in the markup 
+languages SGML and XML. The term indicates that a certain portion of the document is general 
+character data, rather than non-character data or character data with a more specific, 
+limited structure.

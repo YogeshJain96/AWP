@@ -1,0 +1,14 @@
+ul{
+    background-color: darkorange;
+}
+
+ul li{
+    list-style-type: none;
+    display: inline;
+    margin: 0px 10px;
+}
+ul li:hover{
+    background-color: darkorchid;
+    color: white;
+    cursor: pointer;
+}

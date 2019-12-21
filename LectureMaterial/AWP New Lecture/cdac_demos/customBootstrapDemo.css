@@ -1,0 +1,34 @@
+div.container{
+    background-color: tomato;
+    height: 12vh;
+    color: white;
+}
+
+div.container-fluid{
+    background-color: teal;
+    height: 12vh;
+}
+
+#col1{
+    background-color:turquoise;
+    color: #000;
+}
+#col2{
+    background-color: wheat;
+    color: #000;
+}
+#col3{
+    background-color:yellow;
+    color: #000;
+}
+
+#col4{
+    background-color:aqua;
+    color: #000;
+}
+
+#col5{
+    background-color:brown;
+    color: #000;
+}
+

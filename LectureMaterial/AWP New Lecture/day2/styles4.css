@@ -1,0 +1,31 @@
+table#employees{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table#employees td, table#employees th{
+    border: 1px solid #f00;
+    padding: 8px;
+}
+
+table#employees tr:nth-child(even){
+    background-color: #0f0;
+}
+
+table#employees tr{
+    cursor: pointer;
+}
+table#employees tr:hover{
+    background-color: darkgoldenrod;
+}
+
+table#employees th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: darkmagenta;
+    color: #fff;
+}
+
+

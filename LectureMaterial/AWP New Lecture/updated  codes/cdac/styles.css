@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+}
+div {
+    background-color: rgb(144, 161, 161) !important;
+}
+
+div.secondElementInFile{
+    font-size: 30px;
+}
+
+div.secondElementInFile p#secondPara span{
+
+}
+
+
+
+p{
+    color: red;
+}
+
+p#firstPara{
+    color: blue;
+}
+p#secondPara{
+    color: crimson;
+}
