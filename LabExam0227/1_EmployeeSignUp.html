@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Employee Sign Up</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        div {
+            font-size: 1.5rem;
+        }
+
+        table {
+            margin: auto;
+        }
+        td{
+            text-align: right;
+        }
+
+        input {
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Employee Sign Up Form</h1>
+    <hr>
+    <div>
+        <form>
+            <table>
+                <tr>
+                    <td>First Name:</td>
+                    <td><input type="text" name="EmpFirstName" /></td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td>
+                    <td><input type="text" name="EmpLastName" /></td>
+                </tr>
+                <tr>
+                    <td>DoB:</td>
+                    <td><input type="date" name="Dob" /></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email" name="Email" required/></td>
+                </tr>
+                <tr>
+                    <td>PhoneNo:</td>
+                    <td><input type="number" name="PhoneNo" /></td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td><input type="radio" name="Gender" value="m"/>Male<input type="radio" name="Gender" value="f"/>Female</td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td><input type="password" name="Password" required/></td>
+                </tr>
+                <tr>
+                    <td>Confirm Password:</td>
+                    <td><input type="password" name="ConfirmPassword" required/></td>
+                </tr>
+                <tr>
+                    <td>Company Name:</td>
+                    <td><input type="text" name="CompanyName" /></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" style="text-align: center;"><input type="submit" value="SignUp"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>
