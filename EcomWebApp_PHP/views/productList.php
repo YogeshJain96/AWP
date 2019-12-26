@@ -18,7 +18,7 @@
       // output data of each row
       while ($row = $result->fetch_assoc()) {
         echo "
-          <div class='col-lg-4 col-md-6 col-sm-12'>
+          <div class='col-lg-4 col-md-6 col-sm-12 filterDiv category-".$row['category']."'>
             <div class='card' style='width: 18rem; margin:auto; margin-bottom: 2em; '>
               <svg class='bd-placeholder-img card-img-top' width='100%' height='180' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='xMidYMid slice' focusable='false' role='img' aria-label='Placeholder: Image cap'>
                 <rect width='100%' height='100%' fill='#868e96'></rect>
@@ -28,7 +28,7 @@
               </svg>
               <!-- <img src=' class='card-img-top' alt='...' /> -->
               <div class='card-body'>
-                <h5 class='card-title'>" . $row["name"] . "</h5>
+                <h5 class='card-title productName'>" . $row["name"] . "</h5>
                 <p class='card-text card-subtitle text-muted'>
                 " . $row["description"] . "ription" . $row["category"] . "
                 </p>

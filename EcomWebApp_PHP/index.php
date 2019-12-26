@@ -13,7 +13,7 @@ session_start();
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css" />
-
+  <link rel="stylesheet" href="css/style.css" />
   <title>EKart | Responsive Ecommerce Site &mdash; By Ontrooo</title>
 </head>
 
@@ -27,7 +27,7 @@ session_start();
   <main role="main">
     <div class="container">
       <div class="row" style="margin-top: 20px">
-      <?php
+        <?php
         include_once('views/productCategories.php');
         ?>
       </div>
@@ -71,6 +71,8 @@ session_start();
       <p>&copy; 2019 Ontrooo &middot; <a href="#">0227</a></p>
     </footer>
   </main>
+  <script src="js/searchProduct.js"></script>
+  <script src="js/categoryFilter.js"></script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="js/jquery-3.4.1.slim.min.js"></script>
   <script src="js/popper.min.js"></script>
